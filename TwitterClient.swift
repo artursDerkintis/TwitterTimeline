@@ -8,8 +8,8 @@
 
 import UIKit
 
-let twitterConsumerKey = "Ttom3Lv5BgOivYWLFThzyNQIi"
-let twitterConsumerSecret = "VG46Q9jkSTzbKci1fDLhZjFJm3WtMSuRjnkA6PR8LNZEsuuSfx"
+let twitterConsumerKey = "Your Consumer Key Here"
+let twitterConsumerSecret = "Your Consumer Secret Here"
 
 let twitterBaseURL = NSURL(string: "https://api.twitter.com")
 
