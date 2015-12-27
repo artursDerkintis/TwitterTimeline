@@ -147,7 +147,7 @@ class SFScrollView : UIView, UIScrollViewDelegate {
     }
     func releaseEverything(){
         containsSomething = false
-        for var cell : SFCell in cells.mutableCopy() as! [SFCell]{
+        for cell : SFCell in cells.mutableCopy() as! [SFCell]{
             cell.removeFromSuperview()
         }
         cells.removeAllObjects()
@@ -165,7 +165,7 @@ class SFScrollView : UIView, UIScrollViewDelegate {
     }
     
     func repositionEachCell(scrollView : UIScrollView){
-        for var cell : SFCell in cells.mutableCopy() as! [SFCell]{
+        for cell : SFCell in cells.mutableCopy() as! [SFCell]{
             
             //next the magic happens, well, not really magic, but this is main thing!
             

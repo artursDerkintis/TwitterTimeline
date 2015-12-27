@@ -92,13 +92,12 @@ extension UIImageView {
         
         self.af_requestImageOperation = (NSBlockOperation(block: { () -> Void in
             var response:NSURLResponse?
-            var error:NSError?
             do{
                 let data : NSData?  = try! NSURLConnection.sendSynchronousRequest(request, returningResponse: &response)
             
             dispatch_async(dispatch_get_main_queue(), { () -> Void in
                 if request.URL!.isEqual(self.af_requestImageOperation.request?.URL) {
-                    var image:UIImage? = (data != nil ? UIImage(data: data!) : nil)
+                    let image:UIImage? = (data != nil ? UIImage(data: data!) : nil)
                     if image != nil {
                         if success != nil {
 							success!(request: request, response: response, image: image!, fromCache:false)
@@ -110,13 +109,12 @@ extension UIImageView {
                     }
                     else {
                         if failure != nil {
-                            failure!(request: request, response:response, error: error!)
                         }
                     }
                     
                     self.af_requestImageOperation = (nil, nil)
                 }
-            })}catch{
+            })}catch {
                 
             }
         }), request)

@@ -157,7 +157,7 @@ class SFSmartCollectionController : UIViewController, UICollectionViewDataSource
                 let count = self.tweets.count
                 self.tweets += tweets!
                 var indexPaths = [NSIndexPath]()
-                for i in stride(from: count, to: self.tweets.count, by: +1){
+                for i in count.stride(to: self.tweets.count, by: +1){
                     
                     indexPaths.append(NSIndexPath(forRow: i, inSection: 0))
                 }

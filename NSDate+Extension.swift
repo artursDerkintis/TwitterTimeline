@@ -18,10 +18,13 @@ let kYear = kDay * 365
 func NSDateTimeAgoLocalizedStrings(key: String) -> String {
     
     let resourcePath = NSBundle.mainBundle().resourcePath
-    let path = resourcePath?.stringByAppendingPathComponent("NSDateTimeAgo.bundle")
-    let bundle = NSBundle(path: path!)
+    if let res = resourcePath{
+    let path = NSString(string: res as NSString).stringByAppendingPathComponent("NSDateTimeAgo.bundle")
+    let bundle = NSBundle(path: path)
     
     return NSLocalizedString(key, tableName: "NSDateTimeAgo", bundle: bundle!, comment: "")
+    }
+    return ""
 }
 
 extension NSDate {
